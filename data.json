@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Example Historic Building",
+    "type": "Historic Site",
+    "region": "Central Region",
+    "period": "19th century",
+    "latitude": 51.5074,
+    "longitude": -0.1278,
+    "description": "A historic building connected with the development of the local community.",
+    "source": "Local archive"
+  },
+  {
+    "name": "Traditional Craft Workshop",
+    "type": "Living Tradition",
+    "region": "Northern Region",
+    "period": "Contemporary",
+    "latitude": 53.4808,
+    "longitude": -2.2426,
+    "description": "A community workshop preserving traditional craft knowledge.",
+    "source": "Community contributor"
+  },
+  {
+    "name": "Annual Cultural Festival",
+    "type": "Festival",
+    "region": "Southern Region",
+    "period": "Annual",
+    "latitude": 50.8225,
+    "longitude": -0.1372,
+    "description": "An annual festival celebrating local music, food, and storytelling.",
+    "source": "Festival committee"
+  }
+]
