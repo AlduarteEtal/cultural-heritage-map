@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapping Thessaloniki</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Self-check banner. Deliberately inline so it still shows when
+   styles.css is the thing that failed. */
+#selfcheck{display:none;margin:0;padding:1rem 1.25rem;background:#8C2A2A;
+  color:#fff;font:15px/1.5 system-ui,sans-serif}
+#selfcheck b{display:block;font-size:16px;margin-bottom:.25rem}
+#selfcheck code{background:rgba(255,255,255,.18);padding:0 .25rem;border-radius:2px}
+</style>
+</head>
+<body>
+<p id="selfcheck"></p>
+
+<header class="masthead">
+  <h1>Thessaloniki <span class="country">Greece</span></h1>
+  <p class="byline">ULP Year 3 · Living in the City 26–27</p>
+</header>
+
+<p class="standfirst">A working map of Thessaloniki for the Social Intervention
+Project. The city was European Capital of Culture in 1997 and spent the
+following three decades arguing about what that left behind. We are mapping
+what is still standing, what is still running, and what quietly closed.</p>
+
+<div class="erabar">
+  <input type="range" id="era" min="0" max="0" value="0" step="1"
+         aria-label="Filter places by period">
+  <p class="now"><span id="era-range"></span><b id="era-name"></b></p>
+  <div class="ticks" id="ticks"></div>
+</div>
+
+<div class="split">
+  <div class="mapcol"><div id="map"></div></div>
+
+  <div class="listcol">
+    <div class="listhead">
+      <h2>Places and layers</h2>
+      <button type="button" id="reset" hidden>Show all layers</button>
+    </div>
+    <div id="list"></div>
+    <div class="routes">
+      <label><input type="checkbox" id="show-walks" checked> Routes walked</label>
+      <div id="walklist"></div>
+    </div>
+  </div>
+</div>
+
+<main class="reading">
+  <section>
+    <h2>The city</h2>
+    <p>Location, size, and a short historical sketch — founded 315 BC, Roman,
+      Byzantine, Ottoman until 1912, burnt in 1917, remade by the 1922 population
+      exchange. Then say what kind of city Thessaloniki is now, and give the
+      evidence rather than asserting it.</p>
+    <p>Say which population figure you are using and why. The municipality, the
+      metropolitan area and the regional unit are three different numbers and most
+      reports quietly mix them.</p>
+    <h3>Figures</h3>
+    <table class="figures"><tbody>
+      <tr><th>Municipality</th><td>319,045</td><td class="src">ELSTAT census, 2021</td></tr>
+      <tr><th>Metropolitan area</th><td>1,006,112</td><td class="src">ELSTAT census, 2021</td></tr>
+      <tr><th>Regional unit</th><td>1,092,919</td><td class="src">ELSTAT census, 2021</td></tr>
+      <tr><th>Municipal area</th><td>19.3 km²</td><td class="src">ELSTAT, 2021</td></tr>
+      <tr><th>Density, municipality</th><td>16,525 / km²</td><td class="src">ELSTAT, 2021</td></tr>
+      <tr><th>Median age</th><td>—</td><td class="src">ELSTAT — find it</td></tr>
+    </tbody></table>
+  </section>
+
+  <section>
+    <h2>What the city is dealing with</h2>
+    <p>The challenges behind the cultural and placemaking programmes: a
+      long-argued "arrested development" relative to Athens, the working port at
+      the city's edge, transport that only got fixed in 2024, short-let pressure on
+      the centre. Two or three of these, with the structural cause rather than the
+      symptom.</p>
+    <h3>Where the desk and the street disagree</h3>
+    <p>The most useful paragraph on this page. Name one thing the statistics or
+      the city's own communications claim, and what you found when you went to
+      look — a 1997 venue that is closed, a regeneration plan with nothing on the
+      ground, a district whose reputation does not match a Tuesday morning.</p>
+  </section>
+
+  <section>
+    <h2>How we worked</h2>
+    <p>Methods in plain terms: which datasets, how many walks, how many
+      conversations, what you deliberately did not cover. Say who did what.</p>
+    <h3>What we would do differently</h3>
+    <p>Short and specific.</p>
+    <h3>Sources</h3>
+    <p>Full reference list, in the citation style the course expects.</p>
+  </section>
+</main>
+
+<footer>
+  Updated September 2026. Basemap © OpenStreetMap contributors.
+  Observations are our own unless a source is given.
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="config.js"></script>
+<script src="places.js"></script>
+<script src="map.js"></script>
+
+<script>
+/* --- self-check -------------------------------------------------
+   Tells you plainly when a file is missing, instead of silently
+   rendering as unstyled text. Remove once you are confident. */
+(function(){
+  var probe = document.createElement("div");
+  probe.className = "css-probe";
+  document.body.appendChild(probe);
+  var cssOK = getComputedStyle(probe).position === "absolute";
+  probe.remove();
+
+  var problems = [];
+  if(!cssOK)              problems.push("<code>styles.css</code> did not load");
+  if(!window.L)           problems.push("Leaflet did not load (check your internet connection)");
+  if(!window.THEMES)      problems.push("<code>config.js</code> did not load");
+  if(!window.PLACES)      problems.push("<code>places.js</code> did not load");
+  if(cssOK && window.L && window.THEMES && window.PLACES
+     && !document.querySelector(".entry") && window.PLACES.length){
+    problems.push("<code>map.js</code> did not run");
+  }
+
+  if(problems.length){
+    var el = document.getElementById("selfcheck");
+    el.style.display = "block";
+    el.innerHTML = "<b>Something did not load.</b>" + problems.join(". ") + "." +
+      " All seven files must sit in the same folder, next to each other." +
+      " Press F12 and open the Console tab for the details.";
+  }
+})();
+</script>
+</body>
+</html>

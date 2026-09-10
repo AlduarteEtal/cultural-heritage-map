@@ -1,0 +1,158 @@
+/* ===============================================================
+   TOKENS
+   =============================================================== */
+:root{
+  --paper:#E9EAE4; --paper-raised:#F4F5F1;
+  --ink:#1B2A2E; --ink-soft:#55625F;
+  --rule:#C3C7BE; --rule-strong:#9AA096;
+  --signal:#23407F;
+  --sans:"Archivo",system-ui,sans-serif;
+  --serif:"Newsreader",Georgia,serif;
+  --gutter:clamp(1.25rem,4vw,3.5rem);
+  --measure:34rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+/* Used by the self-check in index.html to detect that this file loaded.
+   Do not remove. */
+.css-probe{position:absolute}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-size:1.0625rem;line-height:1.6}
+:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
+/* ===============================================================
+   MASTHEAD
+   =============================================================== */
+.masthead{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.5rem;
+  padding:1.5rem var(--gutter) 1.25rem;border-bottom:1px solid var(--rule-strong)}
+.masthead h1{font-family:var(--sans);font-weight:700;
+  font-size:clamp(1.75rem,4.5vw,2.75rem);letter-spacing:-.025em;line-height:1;margin:0}
+.masthead h1 .country{font-weight:400;color:var(--ink-soft);letter-spacing:-.01em}
+.masthead .byline{font-family:var(--sans);font-size:.8125rem;font-weight:500;
+  color:var(--ink-soft);margin:0;margin-left:auto}
+.standfirst{max-width:var(--measure);padding:1.25rem var(--gutter) 1.5rem;margin:0;
+  font-size:1.1875rem;line-height:1.55;color:var(--ink-soft)}
+
+/* ===============================================================
+   ERA BAR
+   =============================================================== */
+.erabar{padding:.875rem var(--gutter) 1rem;border-top:1px solid var(--rule-strong);
+  border-bottom:1px solid var(--rule-strong);background:var(--paper-raised);
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.25rem 1.5rem;align-items:center}
+.erabar input[type=range]{width:100%;margin:0;accent-color:var(--signal)}
+.erabar .now{font-family:var(--sans);font-size:.9375rem;font-weight:600;
+  letter-spacing:-.01em;white-space:nowrap;text-align:right}
+.erabar .now span{display:block;font-weight:400;font-size:.75rem;color:var(--ink-soft)}
+.ticks{grid-column:1;display:flex;justify-content:space-between;
+  font-family:var(--sans);font-size:.6875rem;color:var(--ink-soft);
+  margin-top:-.125rem;padding-inline:2px}
+.ticks b{font-weight:500}
+
+/* ===============================================================
+   SPLIT — map 1.9fr / list 1fr
+   =============================================================== */
+.split{display:grid;grid-template-columns:1.9fr 1fr;
+  height:min(74vh,44rem);border-bottom:1px solid var(--rule-strong)}
+.mapcol{position:relative;border-right:1px solid var(--rule-strong);background:var(--paper-raised)}
+#map{position:absolute;inset:0}
+.leaflet-container{font-family:var(--sans);background:var(--paper-raised)}
+/* Push OSM tiles back to a pale ground so the pins are the loudest thing.
+   Tweak these three values, or delete the rule if you swap basemap. */
+.basemap{filter:grayscale(.92) brightness(1.14) contrast(.8)}
+
+.pin{display:block;width:1.25rem;height:1.25rem;border-radius:50%;
+  border:3px solid #fff;
+  box-shadow:0 0 0 1px rgba(27,42,46,.5),0 1px 3px rgba(27,42,46,.3);
+  transition:transform 120ms ease-out}
+.pin.desk{border-radius:3px}
+.pin.lit{transform:scale(1.45);box-shadow:0 0 0 2px var(--ink),0 2px 6px rgba(27,42,46,.4)}
+
+/* ===============================================================
+   LIST — doubles as the legend
+   =============================================================== */
+.listcol{overflow-y:auto;background:var(--paper-raised);font-family:var(--sans)}
+.listhead{position:sticky;top:0;z-index:2;background:var(--paper-raised);
+  border-bottom:1px solid var(--rule);padding:.75rem 1rem;
+  display:flex;justify-content:space-between;align-items:baseline;gap:.75rem}
+.listhead h2{font-size:.75rem;font-weight:600;color:var(--ink-soft);margin:0}
+.listhead button{appearance:none;border:0;background:transparent;font:inherit;
+  font-size:.75rem;font-weight:500;color:var(--signal);cursor:pointer;padding:0}
+.listhead button[hidden]{display:none}
+
+.layer{border-bottom:1px solid var(--rule)}
+.layer > h3{margin:0}
+.layer > h3 > button{width:100%;appearance:none;border:0;background:transparent;
+  font:inherit;font-family:var(--sans);font-size:.875rem;font-weight:600;
+  text-align:left;cursor:pointer;padding:.625rem 1rem;
+  display:grid;grid-template-columns:.625rem 1fr auto;align-items:center;gap:.5rem;
+  color:var(--ink)}
+.layer > h3 > button::before{content:"";width:.625rem;height:.625rem;
+  border-radius:50%;background:var(--dot)}
+.layer > h3 > button:hover{background:rgba(27,42,46,.045)}
+.layer > h3 > button .n{font-size:.75rem;font-weight:500;color:var(--ink-soft);
+  font-variant-numeric:tabular-nums}
+.layer.muted > h3 > button{opacity:.42}
+.layer.isolated > h3 > button{background:rgba(35,64,127,.08)}
+
+.entry{border-top:1px solid var(--rule);padding:.6875rem 1rem .75rem;cursor:pointer}
+.entry:hover,.entry.lit{background:rgba(27,42,46,.045)}
+.entry.dim{opacity:.32}
+.entry h4{font-size:.875rem;font-weight:600;letter-spacing:-.01em;margin:0;
+  display:flex;gap:.4375rem;align-items:baseline;flex-wrap:wrap}
+.entry .el{font-family:var(--serif);font-weight:400;font-size:.8125rem;color:var(--ink-soft)}
+.entry .tags{display:flex;gap:.375rem;flex-wrap:wrap;margin-top:.3125rem}
+.entry .tag{font-size:.6875rem;font-weight:500;color:var(--ink-soft);
+  border:1px solid var(--rule-strong);border-radius:2px;padding:0 .3125rem}
+.entry .note{font-family:var(--serif);font-size:.9375rem;line-height:1.5;
+  margin:.5rem 0 0;display:none}
+.entry.open .note{display:block}
+.entry .src{font-size:.6875rem;color:var(--ink-soft);margin:.4375rem 0 0;display:none}
+.entry.open .src{display:block}
+.entry .src a{color:var(--signal)}
+
+.routes{padding:.75rem 1rem 1rem}
+.routes label{display:flex;gap:.5rem;align-items:center;cursor:pointer;
+  font-size:.875rem;font-weight:600}
+.routes input{margin:0;accent-color:var(--signal)}
+.routes .r{margin-top:.4375rem;font-family:var(--serif);font-size:.875rem;
+  color:var(--ink-soft);cursor:pointer;padding:.1875rem 0}
+.routes .r:hover{color:var(--ink)}
+.empty{padding:1.5rem 1rem;font-family:var(--serif);color:var(--ink-soft);font-size:.9375rem}
+
+/* ===============================================================
+   PROSE
+   =============================================================== */
+.reading{padding:clamp(2.5rem,6vw,4.5rem) var(--gutter);display:grid;
+  gap:clamp(2rem,5vw,4rem);
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));
+  align-items:start;max-width:90rem}
+.reading section{max-width:var(--measure)}
+.reading h2{font-family:var(--sans);font-size:1.25rem;font-weight:600;
+  letter-spacing:-.015em;margin:0 0 .75rem;padding-bottom:.5rem;
+  border-bottom:2px solid var(--ink)}
+.reading h3{font-family:var(--sans);font-size:.9375rem;font-weight:600;margin:1.5rem 0 .25rem}
+.reading p{margin:0 0 .875rem}
+.reading p:last-child{margin-bottom:0}
+.figures{width:100%;border-collapse:collapse;font-family:var(--sans);
+  font-size:.875rem;margin-top:.5rem}
+.figures th,.figures td{text-align:left;padding:.5rem .5rem .5rem 0;
+  border-bottom:1px solid var(--rule);vertical-align:top}
+.figures th{font-weight:500;color:var(--ink-soft)}
+.figures td{font-variant-numeric:tabular-nums}
+.figures td.src{font-variant-numeric:normal;color:var(--ink-soft);font-size:.8125rem}
+footer{padding:1.25rem var(--gutter) 3rem;border-top:1px solid var(--rule-strong);
+  font-family:var(--sans);font-size:.8125rem;color:var(--ink-soft)}
+footer a{color:var(--signal)}
+
+/* ===============================================================
+   NARROW — stack
+   =============================================================== */
+@media (max-width:52rem){
+  .split{grid-template-columns:1fr;height:auto}
+  .mapcol{height:56vh;border-right:0;border-bottom:1px solid var(--rule-strong)}
+  .listcol{max-height:none;overflow:visible}
+  .masthead .byline{margin-left:0;width:100%}
+  .erabar{grid-template-columns:1fr}
+  .erabar .now{text-align:left}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
