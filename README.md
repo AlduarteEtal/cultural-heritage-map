@@ -9,36 +9,19 @@ Seven files in one folder, no subdirectories. Keep them together.
 
 | File | What it is |
 | --- | --- |
-| `places.js` | **The data. The file the group edits.** |
-| `config.js` | The five layers and their colours |
+| `places.js` | **The data. The file for edits, easy to understand..** |
+| `config.js` | The five layers and their colours (Also easy to understand)|
 | `index.html` | Page structure and the written sections |
 | `styles.css` | All styling |
-| `map.js` | The logic — no need to touch it to add data |
-| `README.md` | This file |
+| `map.js` | The logic, no need to touch it to add data anymore. |
+| `README.md` | This file, for instructions if needed.  |
 | `SOURCES.md` | Research leads for Thessaloniki |
 
 ## Try it locally
 
 Double-click `index.html`. A map with no red banner means everything loaded.
-The page checks itself and names any file that failed to load.
+The page checks itself and names any file that failed to load. You may see broken links here due to the handiling of how OSM or other mapping software works. Fair but if commited it is fixed since we use the github.io outwards. 
 
-## Publishing
-
-Drag all seven files (not the folder) into the repo, then Settings → Pages →
-*Deploy from a branch* → `main` / `/ (root)`.
-
-## The layers
-
-Four layers from slide 11, in the same colours, plus **Context**, which starts
-switched off. Context points (airport, port, metro, suburbs) also don't count
-toward the starting view, so the map opens on the city centre rather than the
-whole metro area.
-
-- **Numbered pins** are the transect stops, 1 to 4, and the list keeps them in order.
-- **Hollow pins** are locations not yet checked on the ground. Solid means checked.
-- **The dotted line** is Nea Paralia. Click it to open stop 3.
-- Pins that sit almost on top of each other fan out slightly when zoomed out,
-  and return to their true spot when you zoom in.
 
 ## Adding or fixing a place
 
