@@ -92,7 +92,7 @@ window.PLACES = [
     evidence:"desk",
     summary:"The Museum of Byzantine Culture opened before Thessaloniki’s year as European Capital of Culture, but it became closely connected with the 1997 programme through major exhibitions and cultural events.",
     note:"The Museum of Byzantine Culture opened before Thessaloniki’s year as European Capital of Culture, but it became closely connected with the 1997 programme through major exhibitions and cultural events. The Treasures of Mount Athos exhibition was one of the most important examples, bringing religious objects, manuscripts and artworks from Mount Athos to a wider public. The museum therefore represents both the city’s pre-existing cultural infrastructure and the international visibility created around 1997.",
-    factStatus:"unverified"
+    factStatus:"observed"
   },
 
   {
@@ -150,7 +150,7 @@ window.PLACES = [
     mainTheme:"unesco",
     coords:[40.6333, 22.9528],
     coordStatus:"verified",
-    evidence:"desk",
+    evidence:"both",
     summary:"The Rotunda is one of Thessaloniki’s most prominent surviving Roman buildings and was later adapted for Christian and Islamic religious use.",
     note:"The Rotunda is one of Thessaloniki’s most prominent surviving Roman buildings and was later adapted for Christian and Islamic religious use. Its interior is particularly important for its early Christian mosaics, which are among the features recognised by UNESCO. The building also demonstrates how a single monument can accumulate several layers of religious, political and architectural history.",
     factStatus:"verified",
@@ -163,7 +163,7 @@ window.PLACES = [
     mainTheme:"unesco",
     coords:[40.6388, 22.9477],
     coordStatus:"verified",
-    evidence:"desk",
+    evidence:"both",
     summary:"The Church of Saint Demetrios is dedicated to Thessaloniki’s patron saint and is one of the city’s most important religious monuments.",
     note:"The Church of Saint Demetrios is dedicated to Thessaloniki’s patron saint and is one of the city’s most important religious monuments. It is known especially for its early Christian mosaics and its connection with the historical cult of Saint Demetrios. The church was seriously affected by the 1917 fire and subsequently restored, making it relevant both as a heritage site and as an example of reconstruction after urban disaster.",
     factStatus:"verified",
@@ -176,7 +176,7 @@ window.PLACES = [
     mainTheme:"unesco",
     coords:[40.6329, 22.9469],
     coordStatus:"verified",
-    evidence:"desk",
+    evidence:"both",
     summary:"Hagia Sophia is one of Thessaloniki’s major Byzantine churches and should not be confused with the better-known building of the same name in Istanbul.",
     note:"Hagia Sophia is one of Thessaloniki’s major Byzantine churches and should not be confused with the better-known building of the same name in Istanbul. Its architecture and decoration reflect the development of Byzantine religious art after the period of iconoclasm. The church remains an important landmark in the central city and forms part of the wider group of monuments that led to Thessaloniki’s UNESCO inscription.",
     factStatus:"verified",
@@ -202,7 +202,7 @@ window.PLACES = [
     mainTheme:"unesco",
     coords:[40.6425, 22.9594],
     coordStatus:"verified",
-    evidence:"desk",
+    evidence:"field",
     summary:"The city walls formed a major defensive system around historic Thessaloniki, especially on the northern and eastern sides of the upper town.",
     note:"The city walls formed a major defensive system around historic Thessaloniki, especially on the northern and eastern sides of the upper town. Trigonion Tower is one of the most recognisable surviving sections and is also a popular viewpoint over the city and the Thermaic Gulf. The walls are valuable not only as military architecture but also as a clear physical reminder of the historic limits of the city.",
     factStatus:"unverified",
@@ -215,7 +215,7 @@ window.PLACES = [
     mainTheme:"unesco",
     coords:[40.6446, 22.9602],
     coordStatus:"verified",
-    evidence:"desk",
+    evidence:"field",
     summary:"Heptapyrgion is the large fortress complex at the highest part of the old city walls.",
     note:"Heptapyrgion is the large fortress complex at the highest part of the old city walls. Although its name refers to seven towers, the complex developed over several historical periods and was later used as a prison. Today it is associated with archaeological management, heritage interpretation and exhibitions, while its elevated position gives it a strong visual presence over Thessaloniki.",
     factStatus:"unverified",
@@ -360,10 +360,10 @@ window.PLACES = [
     mainTheme:"hotspots",
     coords:[40.6264, 22.9484],
     coordStatus:"verified",
-    evidence:"desk",
+    evidence:"field",
     summary:"The White Tower is Thessaloniki’s most recognisable landmark and one of the main symbols used to represent the city.",
     note:"The White Tower is Thessaloniki’s most recognisable landmark and one of the main symbols used to represent the city. It stands beside the waterfront and now functions as a museum and viewing point. Because it is easy to reach and highly visible from the promenade, it attracts a concentrated flow of visitors and acts as a gateway between the central city and Nea Paralia.",
-    factStatus:"unverified"
+    factStatus:"verified"
   },
 
   /* ---------- Context (off by default) ---------- */
@@ -396,7 +396,7 @@ window.PLACES = [
     mainTheme:"context",
     coords:[40.6261, 22.96],
     coordStatus:"verified",
-    evidence:"desk",
+    evidence:"both",
     summary:"Panepistimio station serves the university district and provides access to the central campus, the International Fair and nearby cultural institutions.",
     note:"Panepistimio station serves the university district and provides access to the central campus, the International Fair and nearby cultural institutions. It is part of Thessaloniki’s first metro line, which began public service in 2024. The station is useful as a transport reference point because it connects the historic centre and waterfront area with the city’s main academic zone.",
     factStatus:"verified",
@@ -409,7 +409,7 @@ window.PLACES = [
     mainTheme:"context",
     coords:[40.6369, 22.9419],
     coordStatus:"verified",
-    evidence:"desk",
+    evidence:"both",
     summary:"Venizelou station is located in the historic centre and is notable for the archaeological remains displayed within the station environment.",
     note:"Venizelou station is located in the historic centre and is notable for the archaeological remains displayed within the station environment. The site brings Roman and Byzantine urban archaeology into an everyday transport setting rather than isolating it inside a conventional museum. It is therefore an important example of how infrastructure, archaeology and public access have been combined in central Thessaloniki.",
     factStatus:"verified",
@@ -425,7 +425,7 @@ window.PLACES = [
     evidence:"desk",
     summary:"Agias Sofias station serves the central area around the Church of Hagia Sophia and several important historic streets.",
     note:"Agias Sofias station serves the central area around the Church of Hagia Sophia and several important historic streets. Its location places a modern transport facility close to major Byzantine monuments, shops, offices and pedestrian routes. The station helps connect the historic centre with the wider metro network and may also influence how visitors move between individual heritage sites.",
-    factStatus:"verified",
+    factStatus:"both",
     source:"Elliniko Metro (emetro.gr)",
     url:"https://www.emetro.gr/?lang=en&p=32779"
   },
@@ -474,7 +474,7 @@ window.PLACES = [
     mainTheme:"context",
     coords:[40.5197, 22.9709],
     coordStatus:"verified",
-    evidence:"desk",
+    evidence:"field",
     summary:"Makedonia Airport is Thessaloniki’s main international gateway and is located southeast of the city centre.",
     note:"Makedonia Airport is Thessaloniki’s main international gateway and is located southeast of the city centre. Passenger arrivals make the airport an important part of the region’s tourism economy and its connection to international visitors. It also provides useful context for understanding how the city’s cultural attractions are linked to wider flows of travel, business and migration.",
     factStatus:"verified",
@@ -521,25 +521,4 @@ window.PLACES = [
    LINES — places that are a stretch, not a point.
    =============================================================== */
 
-window.LINES = [
-  {
-    "name": "Nea Paralia waterfront",
-    "theme": "transect",
-    "coordStatus": "approximate",
-    "opens": "Nea Paralia (waterfront promenade)",
-    "path": [
-      [
-        40.6264,
-        22.9484
-      ],
-      [
-        40.615,
-        22.948
-      ],
-      [
-        40.5983,
-        22.9483
-      ]
-    ]
-  }
-];
+window.LINES = [];
